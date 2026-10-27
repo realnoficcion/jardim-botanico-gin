@@ -1,26 +1,120 @@
 @import "tailwindcss";
 
+@theme {
+  /* Paper / Cream — label tones */
+  --color-paper-50: #faf7f0;
+  --color-paper-100: #f3ecd9;
+  --color-paper-200: #ebe1c3;
+  --color-paper-300: #ddd0a8;
+
+  /* Navy — primary brand ink */
+  --color-navy-50: #e9edf5;
+  --color-navy-100: #c5cfe3;
+  --color-navy-200: #8d9fc3;
+  --color-navy-300: #556fa3;
+  --color-navy-400: #2d4a85;
+  --color-navy-500: #1a3570;
+  --color-navy-600: #122858;
+  --color-navy-700: #0d1d44;
+
+  /* Neutral grays for a pristine, airy palette */
+  --color-mist-50: #ffffff;
+  --color-mist-100: #fbfbfa;
+  --color-mist-200: #f3f3f1;
+  --color-mist-300: #e6e5e2;
+  --color-mist-400: #c9c7c2;
+
+  --color-ink: #0d1d44;
+  --color-canvas: #ffffff;
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0d1d44;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #1a3570;
+  color: #ffffff;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-feature-settings: "ss01", "ss02", "liga";
+}
+
+.font-deco {
+  font-family: var(--font-deco), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.font-mono-brand {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.hairline {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* Very subtle paper grain */
+.paper-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.025;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0) rotate(0.3deg);
+  }
+}
+
+.drift {
+  animation: drift 10s ease-in-out infinite;
+}
+
+@keyframes bottle-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+.bottle-float {
+  animation: bottle-float 8s ease-in-out infinite;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
 }
