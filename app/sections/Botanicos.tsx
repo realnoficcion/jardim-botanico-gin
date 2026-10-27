@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { DecoBackground } from "../components/DecoBackground";
 import {
   JuniperIcon,
   CitrusIcon,
@@ -82,7 +83,15 @@ export function Botanicos() {
       id="botanicos"
       className="relative py-32 md:py-48 overflow-hidden border-t border-[color:var(--color-navy-500)]/15 bg-[color:var(--color-mist-100)]"
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+      <DecoBackground
+        variant="scroll"
+        className="absolute top-[18%] left-0 w-full h-[220px] text-[color:var(--color-navy-500)]/[0.22] pointer-events-none"
+      />
+      <DecoBackground
+        variant="crescent"
+        className="absolute -right-[35%] -bottom-[30%] w-[900px] h-[900px] text-[color:var(--color-navy-500)]/[0.18] pointer-events-none"
+      />
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-10">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

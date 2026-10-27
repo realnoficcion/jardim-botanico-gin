@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { DecoBackground } from "../components/DecoBackground";
 
 const STEPS = [
   {
@@ -37,6 +38,14 @@ export function Processo() {
       id="processo"
       className="relative py-32 md:py-48 overflow-hidden border-t border-[color:var(--color-navy-500)]/10 bg-[color:var(--color-mist-100)]"
     >
+      <DecoBackground
+        variant="arcs"
+        className="absolute -left-[30%] top-[10%] w-[1000px] h-[1000px] text-[color:var(--color-navy-500)]/[0.18] pointer-events-none"
+      />
+      <DecoBackground
+        variant="flourish"
+        className="absolute right-[6%] bottom-[12%] w-[560px] h-[380px] text-[color:var(--color-navy-500)]/[0.20] pointer-events-none rotate-[8deg]"
+      />
       <div className="relative max-w-[1400px] mx-auto px-6 md:px-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">

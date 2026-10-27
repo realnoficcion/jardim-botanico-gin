@@ -2,12 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { DecoOrnament } from "./BotanicalOrnament";
+import Image from "next/image";
 
 const INTRO_SEEN_KEY = "jbgin:intro-seen";
-// Fraction of the video (0–1) after which the overlay text starts fading in.
-// The video is ~10s; the pour happens in the second half.
-const TEXT_REVEAL_AT = 0.55;
+// Fractions of the video (0–1) between which the label overlay is visible.
+// Video is ~10s. The pour-into-close-up-glass is from ~5.8s to ~7.2s —
+// show the label only in that window so it never overlaps the bottle.
+const LABEL_SHOW_AT = 0.38;
+const LABEL_HIDE_AT = 0.72;
 
 interface IntroProps {
   onDone?: () => void;
@@ -17,7 +19,7 @@ export function Intro({ onDone }: IntroProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [visible, setVisible] = useState<boolean | null>(null);
   const [canPlay, setCanPlay] = useState(false);
-  const [textShown, setTextShown] = useState(false);
+  const [labelShown, setLabelShown] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -56,15 +58,14 @@ export function Intro({ onDone }: IntroProps) {
     tryPlay();
   }, [visible]);
 
-  // Trigger text when the pour begins in the video.
+  // Show the label only while the glass is in close-up (no bottle visible).
   useEffect(() => {
     const el = videoRef.current;
     if (!el || !visible) return;
     const onTime = () => {
       if (!el.duration || el.duration <= 0) return;
-      if (el.currentTime / el.duration >= TEXT_REVEAL_AT) {
-        setTextShown(true);
-      }
+      const t = el.currentTime / el.duration;
+      setLabelShown(t >= LABEL_SHOW_AT && t < LABEL_HIDE_AT);
     };
     el.addEventListener("timeupdate", onTime);
     return () => el.removeEventListener("timeupdate", onTime);
@@ -99,13 +100,13 @@ export function Intro({ onDone }: IntroProps) {
 
           {/* Light wash — appears only with the text so the pour isn't flattened */}
           <AnimatePresence>
-            {textShown && (
+            {labelShown && (
               <motion.div
                 key="wash"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1.2 }}
+                transition={{ duration: 1.8, ease: [0.33, 0, 0.4, 1] }}
                 className="absolute inset-0 pointer-events-none"
                 style={{
                   background:
@@ -115,56 +116,30 @@ export function Intro({ onDone }: IntroProps) {
             )}
           </AnimatePresence>
 
-          {/* Logo overlay — only shown once the pour starts */}
+          {/* Label overlay — the actual brand label appears over the pour */}
           <AnimatePresence>
-            {textShown && (
+            {labelShown && (
               <motion.div
-                key="logo"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-                className="relative z-10 flex flex-col items-center text-center px-6"
+                key="label"
+                initial={{ opacity: 0, scale: 0.94 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.02 }}
+                transition={{
+                  opacity: { duration: 2.2, ease: [0.33, 0, 0.4, 1] },
+                  scale: { duration: 2.6, ease: [0.22, 1, 0.36, 1] },
+                }}
+                className="relative z-10 flex items-center justify-center px-6"
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.9, delay: 0.1 }}
-                  className="hairline text-[color:var(--color-navy-500)] mb-6 flex items-center gap-3"
-                >
-                  <span className="inline-block w-10 h-px bg-current" />
-                  São Paulo Urban Distillery
-                  <span className="inline-block w-10 h-px bg-current" />
-                </motion.div>
-
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1.1, delay: 0.25 }}
-                  className="font-deco text-[clamp(3rem,10vw,7rem)] leading-[0.95] text-[color:var(--color-navy-500)] tracking-wider drop-shadow-[0_2px_12px_rgba(255,255,255,0.6)]"
-                >
-                  JARDIM
-                  <br />
-                  BOTÂNICO
-                </motion.h1>
-
-                <motion.div
-                  initial={{ opacity: 0, scaleX: 0 }}
-                  animate={{ opacity: 1, scaleX: 1 }}
-                  transition={{ duration: 1.1, delay: 0.65 }}
-                  className="my-8"
-                >
-                  <DecoOrnament className="w-56 text-[color:var(--color-navy-500)]" />
-                </motion.div>
-
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.9 }}
-                  className="font-display italic text-[color:var(--color-navy-500)] text-2xl md:text-3xl tracking-wide drop-shadow-[0_2px_8px_rgba(255,255,255,0.5)]"
-                >
-                  London Dry Gin · N<span className="underline underline-offset-2">o</span> 5
-                </motion.p>
+                <div className="relative w-[min(92vw,760px)] aspect-[1792/2372] drop-shadow-[0_12px_40px_rgba(255,255,255,0.55)]">
+                  <Image
+                    src="/images/label-full-ink.png"
+                    alt="Rótulo completo do Jardim Botânico London Dry Gin"
+                    fill
+                    priority
+                    sizes="(min-width: 768px) 760px, 92vw"
+                    className="object-contain object-center"
+                  />
+                </div>
               </motion.div>
             )}
           </AnimatePresence>

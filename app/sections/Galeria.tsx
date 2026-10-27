@@ -43,13 +43,13 @@ export function Galeria() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="md:col-span-7 relative aspect-[4/5] bg-white overflow-hidden group"
+            className="md:col-span-6 relative aspect-[3/4] bg-white overflow-hidden group"
           >
             <Image
-              src="/images/bottle-splash.webp"
-              alt="Jardim Botânico Gin com drink de taça coupe sobre base de madeira"
+              src="/images/bottle-ice.jpg"
+              alt="Jardim Botânico Gin com balde de gelo e copos de cristal"
               fill
-              sizes="(min-width: 768px) 60vw, 100vw"
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover object-center transition-transform duration-[1200ms] group-hover:scale-[1.03]"
             />
           </motion.div>
@@ -59,45 +59,13 @@ export function Galeria() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="md:col-span-5 relative aspect-[4/5] bg-white overflow-hidden group"
-          >
-            <Image
-              src="/images/bottle-shelf.webp"
-              alt="Jardim Botânico Gin em prateleira iluminada"
-              fill
-              sizes="(min-width: 768px) 40vw, 100vw"
-              className="object-cover object-center transition-transform duration-[1200ms] group-hover:scale-[1.03]"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="md:col-span-5 relative aspect-[3/4] bg-white overflow-hidden group"
-          >
-            <Image
-              src="/images/bottle-ice.jpg"
-              alt="Jardim Botânico Gin com balde de gelo e copos de cristal"
-              fill
-              sizes="(min-width: 768px) 40vw, 100vw"
-              className="object-cover object-center transition-transform duration-[1200ms] group-hover:scale-[1.03]"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="md:col-span-7 relative aspect-[3/4] bg-white overflow-hidden group"
+            className="md:col-span-6 relative aspect-[3/4] bg-[color:var(--color-mist-100)] overflow-hidden group"
           >
             <Image
               src="/images/bottle-rosemary.png"
               alt="Jardim Botânico Gin com alecrim, zimbro e laranja desidratada"
               fill
-              sizes="(min-width: 768px) 60vw, 100vw"
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="object-contain object-center transition-transform duration-[1200ms] group-hover:scale-[1.03]"
             />
           </motion.div>

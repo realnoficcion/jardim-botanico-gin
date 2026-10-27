@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import { DecoBackground } from "../components/DecoBackground";
 
 const SPECS = [
   { label: "Teor Alcoólico", value: "43%", subtitle: "ABV" },
@@ -41,7 +42,15 @@ export function OGin() {
       ref={sectionRef}
       className="relative py-32 md:py-48 overflow-hidden border-t border-[color:var(--color-navy-500)]/10 bg-white"
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+      <DecoBackground
+        variant="arcs"
+        className="absolute -right-[40%] top-[20%] w-[1100px] h-[1100px] text-[color:var(--color-navy-500)]/[0.19] pointer-events-none"
+      />
+      <DecoBackground
+        variant="flourish"
+        className="absolute left-[8%] bottom-[6%] w-[640px] h-[420px] text-[color:var(--color-navy-500)]/[0.20] pointer-events-none -rotate-6"
+      />
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
           <motion.div
             style={{ y: bottleY }}

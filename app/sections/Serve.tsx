@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { DecoBackground } from "../components/DecoBackground";
 
 interface Drink {
   name: string;
@@ -74,7 +75,15 @@ export function Serve() {
       id="serve"
       className="relative py-32 md:py-48 overflow-hidden border-t border-[color:var(--color-navy-500)]/15 bg-white"
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+      <DecoBackground
+        variant="crescent"
+        className="absolute -right-[30%] top-[12%] w-[900px] h-[900px] text-[color:var(--color-navy-500)]/[0.19] pointer-events-none"
+      />
+      <DecoBackground
+        variant="scroll"
+        className="absolute left-0 bottom-[8%] w-full h-[200px] text-[color:var(--color-navy-500)]/[0.20] pointer-events-none"
+      />
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-10">
         <div className="max-w-3xl mb-16 md:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -61,7 +61,8 @@ body {
 
 .font-deco {
   font-family: var(--font-deco), ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  font-weight: 400;
 }
 
 .font-mono-brand {

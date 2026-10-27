@@ -4,6 +4,7 @@ import { SmoothScroll } from "./components/SmoothScroll";
 import { Hero } from "./sections/Hero";
 import { Manifesto } from "./sections/Manifesto";
 import { OGin } from "./sections/OGin";
+import { Rotulo } from "./sections/Rotulo";
 import { Botanicos } from "./sections/Botanicos";
 import { Processo } from "./sections/Processo";
 import { Serve } from "./sections/Serve";
@@ -20,6 +21,7 @@ export default function Home() {
         <Hero />
         <Manifesto />
         <OGin />
+        <Rotulo />
         <Botanicos />
         <Processo />
         <Serve />

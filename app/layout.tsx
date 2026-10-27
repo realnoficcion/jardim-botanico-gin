@@ -3,7 +3,7 @@ import {
   Cormorant_Garamond,
   Inter,
   JetBrains_Mono,
-  Limelight,
+  Poiret_One,
 } from "next/font/google";
 import "./globals.css";
 
@@ -15,7 +15,7 @@ const display = Cormorant_Garamond({
   display: "swap",
 });
 
-const deco = Limelight({
+const deco = Poiret_One({
   variable: "--font-deco",
   subsets: ["latin"],
   weight: ["400"],

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { DecoOrnament } from "../components/BotanicalOrnament";
+import { DecoBackground } from "../components/DecoBackground";
 
 export function Contato() {
   return (
@@ -9,7 +10,11 @@ export function Contato() {
       id="contato"
       className="relative py-32 md:py-48 overflow-hidden border-t border-[color:var(--color-navy-500)]/15 bg-white"
     >
-      <div className="max-w-5xl mx-auto px-6 md:px-10 text-center">
+      <DecoBackground
+        variant="radial"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[1100px] text-[color:var(--color-navy-500)]/[0.16] pointer-events-none"
+      />
+      <div className="relative max-w-5xl mx-auto px-6 md:px-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

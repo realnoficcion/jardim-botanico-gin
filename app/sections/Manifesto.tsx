@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { DecoOrnament } from "../components/BotanicalOrnament";
+import { DecoBackground } from "../components/DecoBackground";
 
 export function Manifesto() {
   return (
@@ -9,7 +10,11 @@ export function Manifesto() {
       id="manifesto"
       className="relative py-32 md:py-48 overflow-hidden bg-[color:var(--color-mist-100)]"
     >
-      <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
+      <DecoBackground
+        variant="crescent"
+        className="absolute -left-[30%] top-[8%] w-[900px] h-[900px] text-[color:var(--color-navy-500)]/[0.21] pointer-events-none"
+      />
+      <div className="relative max-w-4xl mx-auto px-6 md:px-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
