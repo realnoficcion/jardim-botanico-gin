@@ -144,30 +144,27 @@ export function Intro({ onDone }: IntroProps) {
             )}
           </AnimatePresence>
 
-          {/* Skip button — always available */}
+          {/* Skip button: centered on mobile, right-aligned on desktop */}
           <motion.button
             type="button"
             onClick={dismiss}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
-            className="absolute bottom-8 right-8 z-20 hairline text-[0.65rem] text-[color:var(--color-navy-500)] hover:text-[color:var(--color-navy-700)] flex items-center gap-3 px-4 py-2.5 backdrop-blur-sm bg-white/40 border border-[color:var(--color-navy-500)]/20 hover:border-[color:var(--color-navy-500)]/50 transition-all"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 md:left-auto md:right-8 md:translate-x-0 z-20 hairline text-[0.65rem] text-[color:var(--color-navy-500)] hover:text-[color:var(--color-navy-700)] flex items-center gap-3 px-4 py-2.5 backdrop-blur-sm bg-white/40 border border-[color:var(--color-navy-500)]/20 hover:border-[color:var(--color-navy-500)]/50 transition-all"
             aria-label="Pular introdução"
           >
             Pular introdução
             <span className="inline-block w-5 h-px bg-current" />
           </motion.button>
 
-          {/* Progress indicator */}
+          {/* Progress indicator: hidden on mobile so it doesn't collide with the centered skip button */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="absolute bottom-8 left-8 z-20 flex items-center gap-3"
+            className="hidden md:flex absolute bottom-8 left-8 z-20 items-center"
           >
-            <span className="hairline text-[0.6rem] text-[color:var(--color-navy-500)]/70">
-              Entrando
-            </span>
             <ProgressBar videoRef={videoRef} />
           </motion.div>
         </motion.div>
