@@ -38,7 +38,7 @@ export function Manifesto() {
           <span className="italic text-[color:var(--color-navy-500)]">
             uma São Paulo
           </span>{" "}
-          que raramente é dita, mas sempre sentida — urbana, botânica e{" "}
+          que raramente é dita, mas sempre sentida. Urbana, botânica e{" "}
           <span className="italic text-[color:var(--color-navy-500)]">
             inquieta.
           </span>
@@ -62,8 +62,8 @@ export function Manifesto() {
           className="text-[color:var(--color-navy-700)]/70 text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
         >
           Pequenos lotes. Alambique de cobre. Botânicos escolhidos com rigor.
-          Nenhum atalho. Cada garrafa é um registro de tempo, método e lugar —
-          numerada à mão, assinada pela destilaria.
+          Nenhum atalho. Cada garrafa é um registro de tempo, método e lugar.
+          Numerada à mão, assinada pela destilaria.
         </motion.p>
       </div>
     </section>

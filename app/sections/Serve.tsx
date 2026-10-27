@@ -228,7 +228,7 @@ export function Serve() {
               </div>
 
               <div className="mt-12 pt-8 border-t border-[color:var(--color-navy-500)]/15 font-display italic text-2xl text-[color:var(--color-navy-500)]">
-                — {drink.tagline}
+                {drink.tagline}
               </div>
             </div>
           </motion.div>

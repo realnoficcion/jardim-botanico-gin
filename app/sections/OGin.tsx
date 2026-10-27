@@ -15,7 +15,7 @@ const SPECS = [
 const NOTES = [
   {
     stage: "Primeiro Nariz",
-    text: "Zimbro vivo, pinho fresco e cítricos — abertura clássica London Dry, com acenos de cardamomo e flor-de-laranjeira.",
+    text: "Zimbro vivo, pinho fresco e cítricos. Abertura clássica London Dry, com acenos de cardamomo e flor-de-laranjeira.",
   },
   {
     stage: "Paladar",
@@ -103,7 +103,7 @@ export function OGin() {
               Jardim Botânico é um London Dry Gin elaborado em alambique de
               cobre, com dupla destilação dos botânicos. O método é purista: sem
               açúcar, sem corantes, sem aromas adicionados após a destilação.
-              Apenas o espírito e os botânicos — numa conversa calma.
+              Apenas o espírito e os botânicos, numa conversa calma.
             </motion.p>
 
             <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6">

@@ -36,7 +36,7 @@ export function Navbar() {
         <a
           href="#top"
           className="flex items-center gap-3 group"
-          aria-label="Jardim Botânico — início"
+          aria-label="Jardim Botânico, início"
         >
           <svg
             viewBox="0 0 40 40"

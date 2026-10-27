@@ -16,25 +16,25 @@ const ANATOMY: AnatomyEntry[] = [
     label: "Cabeçalho",
     caption:
       "São Paulo Urban Distillery, selo da casa. Serifa clássica em pequeno porte, posta como assinatura discreta sobre o símbolo maior.",
-    position: "top-[15%] left-[88%]",
+    position: "top-[15%] left-[86%]",
   },
   {
     label: "Nome",
     caption:
-      "Tipografia art déco geométrica desenhada à mão. Letras altas e finas, com remates em forma de régua — manifesto visual da marca.",
-    position: "top-[36%] left-[88%]",
+      "Tipografia art déco geométrica desenhada à mão. Letras altas e finas, com remates em forma de régua. Manifesto visual da marca.",
+    position: "top-[36%] left-[86%]",
   },
   {
     label: "Medalhão",
     caption:
-      "N° 5. Hexágono inscrito em moldura radial — o número do lote assinado da edição atual.",
-    position: "top-[62%] left-[88%]",
+      "N° 5. Hexágono inscrito em moldura radial. O número do lote assinado da edição atual.",
+    position: "top-[62%] left-[86%]",
   },
   {
     label: "Selos de Sol",
     caption:
-      "700ml e 43% ABV emoldurados em círculos com raios saindo em sunburst — ícone art déco por excelência.",
-    position: "top-[86%] left-[88%]",
+      "700ml e 43% ABV emoldurados em círculos com raios saindo em sunburst. Ícone art déco por excelência.",
+    position: "top-[86%] left-[86%]",
   },
 ];
 
@@ -71,19 +71,15 @@ export function Rotulo() {
                 sizes="(min-width: 1024px) 500px, 90vw"
                 className="object-cover object-center"
               />
-              {/* Subtle numbered anchors */}
+              {/* Numbered anchors over the right side of the label */}
               {ANATOMY.map((entry, i) => (
-                <motion.span
+                <span
                   key={entry.label}
-                  initial={{ opacity: 0, scale: 0.6 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-                  className={`absolute ${entry.position} w-7 h-7 rounded-full border border-[color:var(--color-navy-500)] bg-white flex items-center justify-center text-[0.6rem] font-mono-brand text-[color:var(--color-navy-500)] -translate-x-1/2 -translate-y-1/2 shadow-sm`}
+                  className={`absolute z-20 ${entry.position} w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-[color:var(--color-navy-500)] bg-white flex items-center justify-center text-[0.6rem] md:text-[0.65rem] font-mono-brand font-semibold text-[color:var(--color-navy-500)] -translate-x-1/2 -translate-y-1/2 shadow-[0_2px_8px_rgba(13,29,68,0.25)]`}
                   aria-hidden="true"
                 >
                   {String(i + 1).padStart(2, "0")}
-                </motion.span>
+                </span>
               ))}
             </div>
           </motion.div>
@@ -123,7 +119,7 @@ export function Rotulo() {
             >
               Cada traço do rótulo é um gesto deliberado. A tipografia art déco
               foi desenhada à mão em homenagem aos cartazes paulistanos dos anos
-              30 — quando a cidade descobria, pela primeira vez, que podia ser
+              30, quando a cidade descobria, pela primeira vez, que podia ser
               moderna sem perder a elegância.
             </motion.p>
 

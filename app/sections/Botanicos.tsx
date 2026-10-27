@@ -65,7 +65,7 @@ const BOTANICALS: Botanical[] = [
     name: "Cardamomo-Verde",
     origin: "Kerala · Índia",
     description:
-      "Especiaria elegante. Mentolada, cítrica e eucaliptal — tempera a boca com frescor.",
+      "Especiaria elegante. Mentolada, cítrica e eucaliptal. Tempera a boca com frescor.",
     Icon: SpiceIcon,
   },
   {
@@ -126,8 +126,8 @@ export function Botanicos() {
             className="mt-8 text-[color:var(--color-navy-700)]/75 text-base md:text-lg leading-relaxed"
           >
             A seleção começa no campo e termina no alambique. Cada botânico é
-            avaliado por produtores de confiança — do zimbro europeu ao capim-
-            santo brasileiro — e preservado em sua pureza antes da destilação.
+            avaliado por produtores de confiança, do zimbro europeu ao capim-
+            santo brasileiro, e preservado em sua pureza antes da destilação.
           </motion.p>
         </div>
 

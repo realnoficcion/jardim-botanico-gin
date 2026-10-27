@@ -59,7 +59,7 @@ export function Contato() {
           className="text-[color:var(--color-navy-700)]/75 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-14"
         >
           Trabalhamos em lotes pequenos. Para encomendas, visitas à destilaria,
-          curadoria de bares ou eventos privados — escreva. Respondemos cada
+          curadoria de bares ou eventos privados, escreva. Respondemos cada
           mensagem.
         </motion.p>
 

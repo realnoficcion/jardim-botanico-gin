@@ -82,7 +82,7 @@ export function Processo() {
               className="mt-8 text-[color:var(--color-navy-700)]/75 text-base md:text-lg leading-relaxed"
             >
               Cinco etapas, nenhuma pressa. É isso que distingue um gin
-              artesanal de uma commodity — não só o que entra na receita, mas
+              artesanal de uma commodity. Não só o que entra na receita, mas
               como ela é tratada em cada passo do caminho.
             </motion.p>
 

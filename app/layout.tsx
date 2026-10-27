@@ -37,9 +37,9 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jardim Botânico · London Dry Gin — São Paulo Urban Distillery",
+  title: "Jardim Botânico · London Dry Gin · São Paulo Urban Distillery",
   description:
-    "Jardim Botânico London Dry Gin — No 5. Destilado em São Paulo, 43% vol. Um gin urbano, brasileiro, elaborado em pequenos lotes.",
+    "Jardim Botânico London Dry Gin No 5. Destilado em São Paulo, 43% vol. Um gin urbano, brasileiro, elaborado em pequenos lotes.",
   keywords: [
     "jardim botanico gin",
     "london dry gin",
