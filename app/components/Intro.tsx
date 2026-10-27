@@ -151,7 +151,7 @@ export function Intro({ onDone }: IntroProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.5 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 md:left-auto md:right-8 md:translate-x-0 z-20 hairline text-[0.65rem] text-[color:var(--color-navy-500)] hover:text-[color:var(--color-navy-700)] flex items-center gap-3 px-4 py-2.5 backdrop-blur-sm bg-white/40 border border-[color:var(--color-navy-500)]/20 hover:border-[color:var(--color-navy-500)]/50 transition-all"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 md:left-auto md:right-8 md:translate-x-0 z-20 hairline whitespace-nowrap text-[0.65rem] text-[color:var(--color-navy-500)] hover:text-[color:var(--color-navy-700)] inline-flex items-center gap-3 px-4 py-2.5 backdrop-blur-sm bg-white/40 border border-[color:var(--color-navy-500)]/20 hover:border-[color:var(--color-navy-500)]/50 transition-all"
             aria-label="Pular introdução"
           >
             Pular introdução
